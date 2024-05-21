@@ -22,7 +22,21 @@ public class Pioche implements IRessource
 	{
 		this.pioche = new ArrayList<Jeton>();
 
-		this.pioche.add(Epice.POIVRE);
+		this.pioche.add(new Jeton(Epice.POIVRE   ));
+		this.pioche.add(new Jeton(Epice.SUMAC    ));
+		this.pioche.add(new Jeton(Epice.CURCUMA  ));
+		this.pioche.add(new Jeton(Epice.CARDAMONE));
+		this.pioche.add(new Jeton(Piece.OR       ));
+		this.pioche.add(new Jeton(Epice.SAFRAN   ));
+		this.pioche.add(new Jeton(Epice.SESAME   ));
+		this.pioche.add(new Jeton(Epice.POIVRE   ));
+		this.pioche.add(new Jeton(Piece.ARGENT   ));
+		this.pioche.add(new Jeton(Piece.ARGENT   ));
+		this.pioche.add(new Jeton(Epice.PAPRIKA  ));
+		this.pioche.add(new Jeton(Epice.SAFRAN   ));
+		this.pioche.add(new Jeton(Epice.SAFRAN   ));
+		this.pioche.add(new Jeton(Epice.SAFRAN   ));
+		this.pioche.add(new Jeton(Epice.CANNELLE ));
 
 
 /*	Ordre des jetons : 

@@ -22,34 +22,40 @@ public class Plateau implements IRessource
 
 	public boolean ajouterRessource( Jeton r )
 	{
-		if( r.getType() instanceof Piece)
+
+		if( r.getType() instanceof Epice)
 		{
 			for(int i = 0 ; i < this.tabEpices[0].length ; i++)
 			{
-				if(		(this.tabEpices[0][i] == r.name() &&
-						(this.tabEpices[1][i] == null || this.tabEpices[3][i] == null))
-						|| this.tabEpices[0][i] == null)
+				if(((this.tabEpices[1][i] == null || this.tabEpices[3][i] == null)) || this.tabEpices[0][i] == null)
 				{
-					this.tabEpices[nbPiece%3][nbPiece/3] = r.getType();
+					this.tabEpices[nbPiece%3][nbPiece/3] = (Epice) r.getType();
 					return true;
 				}
 			}
 			return false;
-		}
-		
-
-
-		for(int i = 0 ; i < this.tabEpices[0].length ; i++)
+		} else if ( r.getType() instanceof Piece)
 		{
-			if(		(this.tabEpices[0][i] == r.getType() &&
-					(this.tabEpices[1][i] == null || this.tabEpices[3][i] == null))
-					|| this.tabEpices[0][i] == null)
+			int cpt = ((Piece) r.getType()).getvaleur();
+			if(((Piece) r.getType()).name().equals("OR"))
 			{
-				this.tabEpices[nbPiece%3][nbPiece/3] = r.getType();
-				return true;
+				for(int i = 0 ; (i < this.tabPieces.length) ; i++)
+				{
+					if(this.tabPieces[i] == null)
+					{
+						this.tabPieces[i] = ((Piece) r.getType());
+						cpt--;
+					}
+
+					if(cpt == 0)
+					{
+						return true;
+					}
+				}
 			}
 		}
 		return false;
+
 	}
 
 	public String toString()
