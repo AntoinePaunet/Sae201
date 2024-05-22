@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import inter.IRessource;
-
-public class Plateau implements IRessource
+public class Plateau
 {
 	private static final int NB_PIECE_MAX = 15 ;
 
@@ -42,16 +39,17 @@ public class Plateau implements IRessource
 						{
 							if(this.tabEpices[i2][i] == null)
 							{
-								System.out.println(r.getType() + "         : " + true);
 								this.tabEpices[i2][i] = (Epice) r.getType();
+								System.out.println( String.format("%14s", r.getType()+ ": true") );
 								return true;
 							}
 						}
 
-					}else if(this.tabEpices[0][i] == null) //Si la ressource n'est pas la même
+					}
+					else if(this.tabEpices[0][i] == null) //Si la ressource n'est pas la même
 					{
-						System.out.println(r.getType() + "         : " + true);
 						this.tabEpices[0][i] = (Epice) r.getType();
+						System.out.println( String.format("%14s", r.getType()+ ": true") );
 						return true;
 					}
 				}
@@ -73,7 +71,7 @@ public class Plateau implements IRessource
 
 			if(nbSlotsLibre < cpt) //Si le nombre de slots de pièce est plus petit que la valeur de la pièce on annule
 			{
-				System.out.println(r.getType().toString().substring(0,r.getType().toString().length()-2) + "         : " + true);
+				System.out.println( String.format("%14s", r.getType()+ ": false") );
 				return false;
 			}
 
@@ -83,7 +81,7 @@ public class Plateau implements IRessource
 			{
 				if (cpt == 0)
 				{
-					System.out.println(r.getType().toString().substring(0,r.getType().toString().length()-2) + "         : " + true);
+					System.out.println( String.format("%14s", r.getType()+ ": true") );
 					return true;
 				}
 
@@ -96,8 +94,7 @@ public class Plateau implements IRessource
 			}
 		}
 
-		System.out.println(r.getType() + String.format("%14s", null) + false); //14
-
+		System.out.println( String.format("%14s", r.getType()+ ": false") );
 		return false;
 
 	}
