@@ -32,12 +32,12 @@ public enum Couleur
 
 	public static int getNbCouleur()
 	{
-		return this.values();
+		return Couleur.values().length;
 	}
 
 	public static Couleur valueOf( int ordinal )
 	{
-		return Couleur.valueOf(ordinal) ;
+		return Couleur.valueOf(ordinal);
 	}
 
 }
