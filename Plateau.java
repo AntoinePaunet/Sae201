@@ -27,7 +27,7 @@ public class Plateau implements IRessource
 		{
 			for(int i = 0 ; i < this.tabEpices[0].length ; i++)
 			{
-				if(((this.tabEpices[1][i] == null || this.tabEpices[3][i] == null)) || this.tabEpices[0][i] == null)
+				if((((this.tabEpices[1][i] == null || this.tabEpices[2][i] == null)) || this.tabEpices[0][i] == null) || (!this.tabEpices[0][i].name().equals(((Epice) r.getType()).name())))
 				{
 					this.tabEpices[nbPiece%3][nbPiece/3] = (Epice) r.getType();
 					this.nbPiece++;
@@ -93,6 +93,9 @@ public class Plateau implements IRessource
 
 		//Début du mode CUI
 		System.out.println(p1);
+		p1.ajouterRessource(p1.pioche.tirerJeton());
+		p1.ajouterRessource(p1.pioche.tirerJeton());
+		p1.ajouterRessource(p1.pioche.tirerJeton());
 		p1.ajouterRessource(p1.pioche.tirerJeton());
 		System.out.println(p1);
 	}
