@@ -121,12 +121,9 @@ public class Plateau implements IRessource
 			s += "+-----";
 
 		if(nbPiece > 1)
-		{
 			s += "+\n" + nbPiece + " pièces";
-		}else {
+		else
 			s += "+\n" + nbPiece + " pièce";
-		}
-
 
 		return s;
 	}
