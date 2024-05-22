@@ -73,7 +73,7 @@ public class Plateau implements IRessource
 
 			for( int i2 = 0 ; i2 < 5 ; i2 ++ )
 				if(this.tabEpices[i1][i2] != null)
-					s += " " + String.format("%3s", this.tabEpices[i1][i2].name().substring(0, 2) ) +  " |" ;
+					s += " " + this.tabEpices[i1][i2].getLibCourt() +  " |" ;
 				else
 					s+= "     |";
 			s += "\n";
@@ -89,7 +89,6 @@ public class Plateau implements IRessource
 	public static void main( String[] args )
 	{
 		Plateau p1 = new Plateau();
-
 
 		//Début du mode CUI
 		System.out.println(p1);
