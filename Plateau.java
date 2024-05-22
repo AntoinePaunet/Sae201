@@ -88,7 +88,7 @@ public class Plateau implements IRessource
 			}
 		}
 
-		System.out.println(r.getType() + String.format("%14s", r.) + false); //14
+		System.out.println(r.getType() + String.format("%14s", null) + false); //14
 
 		return false;
 
