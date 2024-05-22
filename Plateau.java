@@ -7,6 +7,10 @@ public class Plateau implements IRessource
 
 	private int nbPiece ;
 
+	private int score;
+
+	private String detailScore;
+
 	private Pioche pioche;
 
 	private Epice[][] tabEpices;
@@ -19,6 +23,10 @@ public class Plateau implements IRessource
 		this.tabEpices = new Epice[3][5];
 		this.tabPieces = new Piece[8];
 	}
+
+	public int getScore() { return this.score;}
+
+	public String getDetailScore() { return this.detailScore;}
 
 	public boolean ajouterRessource( Jeton r )
 	{
@@ -53,6 +61,46 @@ public class Plateau implements IRessource
 		return false;
 
 	}
+
+
+	public void score()
+	{
+		int score;
+
+		score = 0;
+
+		for (int i = tabPieces.length; i > 0; i--)
+		{
+			if (score == 0 && tabPieces[i] != null)
+				score = (i+1)*(i+1);
+		}
+
+		for (int col = 0; col < tabEpices.length; col++)
+		{
+			if      (tabEpices[col][2] != null)
+					score+=10;
+			else if (tabEpices[col][1] != null)
+					score+= 2;
+		}
+
+		cptPieceLig = 0;
+		for (int lig = 0; col < tabEpices[0].length; col++)
+		{
+			for (int col=0; col < tabEpices.length; col++)
+			{
+				if (tabEpices[lig][col] != null)
+					cptPieceLig++;
+			}
+			if (cptPieceLig >=2 && cptPieceLig <= tabEpices.length + 1)
+				for (int j=2; j <= cptPieceLig; j++)
+					score+=j;
+		}
+
+		this.score = score;
+		this.detailScore = "Score : " + score + "point" + (score > 1 ? "s" : "");
+
+	}
+
 
 	public String toString()
 	{
