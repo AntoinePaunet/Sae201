@@ -80,7 +80,7 @@ public class Plateau implements IRessource
 			s = "Etat final du Plateau\n";
 
 
-		for( int i1 = 3 ; i1 < 0 ; i1 ++ )
+		for( int i1 = 0 ; i1 < 3 ; i1 ++ )
 		{
 			for( int i2 = 0 ; i2 < 5 ; i2 ++ )
 				s += "+-----";
