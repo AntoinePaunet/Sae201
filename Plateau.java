@@ -105,27 +105,36 @@ public class Plateau implements IRessource
 
 	public void score()
 	{
-		int score;
+		int scorePiece, scoreCol, scoreLig;
+		String detail = "Detail :\n ";
 
 		score = 0;
 
+		scorePiece = 0;
 		for (int i = tabPieces.length; i > 0; i--)
 		{
-			if (score == 0 && tabPieces[i] != null)
-				score = (i+1)*(i+1);
+			if (scorePiece == 0 && tabPieces[i] != null)
+				scorePiece = (i+1)*(i+1);
 		}
+		detail = detail + "Pièces      : " + scorePiece + " pt \n "
 
+		int cptCol = 1;
 		for (int col = 0; col < tabEpices.length; col++)
 		{
+			scoreCol = 0;
 			if      (tabEpices[col][2] != null)
-					score+=10;
+					scoreCol=10;
 			else if (tabEpices[col][1] != null)
-					score+= 2;
+					scoreCol= 2;
+			detail = detail + "Colonne " + cptCol + "   : " + String.format("%02d", scoreCol) + " pt\n ";
+			cptCol++;
 		}
 
-		cptPieceLig = 0;
-		for (int lig = 0; col < tabEpices[0].length; col++)
+		int cptLig = 1;
+		int cptPieceLig = 0;
+		for (int lig = 0; lig < tabEpices[0].length; lig++)
 		{
+			scoreLig = 0;
 			for (int col=0; col < tabEpices.length; col++)
 			{
 				if (tabEpices[lig][col] != null)
@@ -133,11 +142,13 @@ public class Plateau implements IRessource
 			}
 			if (cptPieceLig >=2 && cptPieceLig <= tabEpices.length + 1)
 				for (int j=2; j <= cptPieceLig; j++)
-					score+=j;
+					scoreLig+=j;
+			detail = detail + "Ligne   " + cptLig + "   : " + String.format("%02d", scoreLig) + " pt\n ";
+			cptLig++;
 		}
 
 		this.score = score;
-		this.detailScore = "Score : " + score + "point" + (score > 1 ? "s" : "");
+		this.detailScore = "Score : " + score + "point" + (score > 1 ? "s" : "") "\n\n" + detail;
 
 	}
 
