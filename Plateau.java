@@ -214,6 +214,9 @@ public class Plateau implements IRessource
 		}
 		System.out.print( "\n");
 		System.out.println(p1);
+
+
+		Controleur ctrl = new Controleur(p1);
 	}
 
 
