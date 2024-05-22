@@ -22,23 +22,38 @@ public class Plateau implements IRessource
 
 	public boolean ajouterRessource( Jeton r )
 	{
-
 		if( r.getType() instanceof Epice)
 		{
 			for(int i = 0 ; i < this.tabEpices[0].length ; i++)
 			{
-				if(((this.tabEpices[1][i] == null || this.tabEpices[3][i] == null)) || this.tabEpices[0][i] == null)
+				if(this.tabEpices[1][i] == null || this.tabEpices[2][i] == null || this.tabEpices[0][i] == null)
 				{
-					this.tabEpices[nbPiece%3][nbPiece/3] = (Epice) r.getType();
-					this.nbPiece++;
-					return true;
+					if(this.tabEpices[0][i] != null && this.tabEpices[0][i].name().equals(((Epice) r.getType()).name())) //Si on a la même ressource que dans le tableau
+					{
+						for(int i2 = 0; i2 < tabEpices.length ; i2++)
+						{
+							if(this.tabEpices[i2][i] == null)
+							{
+								this.tabEpices[i2][i] = (Epice) r.getType();
+								this.nbPiece++;
+								return true;
+							}
+						}
+
+					}else if(this.tabEpices[0][i] == null) //Si la ressource n'est pas la même
+					{
+						this.tabEpices[0][i] = (Epice) r.getType();
+						this.nbPiece++;
+						return true;
+					}
 				}
 			}
-			return false;
+
 		} else if ( r.getType() instanceof Piece)
 		{
 		int cpt = ((Piece) r.getType()).getvaleur();
-			for(int i = 0 ; (i < this.tabPieces.length) ; i++) {
+			for(int i = 0 ; (i < this.tabPieces.length) ; i++)
+			{
 				if (this.tabPieces[i] == null) {
 					this.tabPieces[i] = ((Piece) r.getType());
 					cpt--;
@@ -92,6 +107,9 @@ public class Plateau implements IRessource
 
 		//Début du mode CUI
 		System.out.println(p1);
+		p1.ajouterRessource(p1.pioche.tirerJeton());
+		p1.ajouterRessource(p1.pioche.tirerJeton());
+		p1.ajouterRessource(p1.pioche.tirerJeton());
 		p1.ajouterRessource(p1.pioche.tirerJeton());
 		System.out.println(p1);
 	}
