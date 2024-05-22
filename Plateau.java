@@ -27,11 +27,14 @@ public class Plateau implements IRessource
 		{
 			for(int i = 0 ; i < this.tabEpices[0].length ; i++)
 			{
-				if((((this.tabEpices[1][i] == null || this.tabEpices[2][i] == null)) || this.tabEpices[0][i] == null) || (!this.tabEpices[0][i].name().equals(((Epice) r.getType()).name())))
+				if(this.tabEpices[1][i] == null || this.tabEpices[2][i] == null || this.tabEpices[0][i] == null)
 				{
-					this.tabEpices[nbPiece%3][nbPiece/3] = (Epice) r.getType();
-					this.nbPiece++;
-					return true;
+					if(this.tabEpices[0][nbPiece/3] != null && !this.tabEpices[0][nbPiece/3].name().equals(((Epice) r.getType()).name()))
+					{
+						this.tabEpices[nbPiece%3][nbPiece/3] = (Epice) r.getType();
+						this.nbPiece++;
+						return true;
+					}
 				}
 			}
 			return false;
