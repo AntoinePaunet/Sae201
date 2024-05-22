@@ -28,9 +28,9 @@ public class Plateau implements IRessource
 			{
 				if(this.tabEpices[1][i] == null || this.tabEpices[2][i] == null || this.tabEpices[0][i] == null)
 				{
-					if(this.tabEpices[0][i] != null && this.tabEpices[0][i].name().equals(((Epice) r.getType()).name())) //Si on a la même ressource que dans le tableau
+					if(this.tabEpices[2][i] != null && this.tabEpices[2][i].name().equals(((Epice) r.getType()).name())) //Si on a la même ressource que dans le tableau
 					{
-						for(int i2 = 0; i2 < tabEpices.length ; i2++)
+						for(int i2 = tabEpices.length-1 ; i2 > -1 ; i2--)
 						{
 							if(this.tabEpices[i2][i] == null)
 							{
@@ -40,10 +40,10 @@ public class Plateau implements IRessource
 							}
 						}
 
-					}else if(this.tabEpices[0][i] == null) //Si la ressource n'est pas la même
+					}else if(this.tabEpices[2][i] == null) //Si la ressource n'est pas la même
 					{
 						System.out.println(r.getType() + "         : " + true);
-						this.tabEpices[0][i] = (Epice) r.getType();
+						this.tabEpices[2][i] = (Epice) r.getType();
 						return true;
 					}
 				}
@@ -88,7 +88,7 @@ public class Plateau implements IRessource
 			}
 		}
 
-		System.out.println(r.getType() + String.format("%14s", null) + false); //14
+		//System.out.println(r.getType() + String.format("%14s", null) + false); //14
 
 		return false;
 
