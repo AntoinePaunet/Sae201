@@ -116,6 +116,7 @@ public class Plateau implements IRessource
 		for( int i2 = 0 ; i2 < 5 ; i2 ++ )
 			s += "+-----";
 
+
 		if(nbPiece > 1)
 			s += "+\n" + nbPiece + " pièces";
 		else
@@ -134,7 +135,7 @@ public class Plateau implements IRessource
 		System.out.println(p1);
 		for(int i = 0 ; i < Plateau.NB_PIECE_MAX ; i++)
 		{
-			p1.ajouterRessource(p1.pioche.tirerJeton());
+			System.out.print( p1.ajouterRessource(p1.pioche.tirerJeton()) + "\n" ); // 14
 		}
 
 		System.out.println(p1);
