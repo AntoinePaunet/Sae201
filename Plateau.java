@@ -88,7 +88,7 @@ public class Plateau implements IRessource
 			}
 		}
 
-		System.out.println(r.getType() + "         : " + false);
+		System.out.println(r.getType() + String.format("%14s", r.) + false); //14
 
 		return false;
 
@@ -139,7 +139,7 @@ public class Plateau implements IRessource
 		System.out.println(p1);
 		for(int i = 0 ; i < Plateau.NB_PIECE_MAX ; i++)
 		{
-			System.out.print( p1.ajouterRessource(p1.pioche.tirerJeton()) + "\n" ); // 14
+			System.out.print( p1.ajouterRessource(p1.pioche.tirerJeton()) + "\n" );
 		}
 
 		System.out.println(p1);
