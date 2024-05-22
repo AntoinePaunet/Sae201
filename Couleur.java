@@ -32,7 +32,7 @@ public enum Couleur
 
 	public static int getNbCouleur()
 	{
-		return 8;
+		return this.values();
 	}
 
 	public static Couleur valueOf( int ordinal )
