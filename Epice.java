@@ -1,5 +1,12 @@
 import inter.IRessource;
-import java.awt.color.*;
+
+/**
+ * Cet classe enum recense les Epices contenues dans le jeu. Les Epices sont un type de Jeton, et ont une Couleur coeespondante, définie dans la classe enum Couleur.
+ * @author Antione Paunet, IUT du Havre
+ * @author Mael Vauthier,  IUT du Havre
+ * @author Martin Ravenel, IUT du Havre
+ * @version 1.0 , 2024-05-23
+*/
 
 public enum Epice implements IRessource
 {
