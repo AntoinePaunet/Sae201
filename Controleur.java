@@ -19,8 +19,12 @@ public class Controleur
         {
             System.out.print( this.plateau.ajouterRessource(this.plateau.getPioche().tirerJeton()) + "\n" );
         }
+        System.out.print("\n");
+        this.plateau.score();
+
         System.out.print( "\n");
-        System.out.println(this.plateau);
+        System.out.println(this.plateau + "\n");
+
 
 
         toInterface();
@@ -52,8 +56,11 @@ public class Controleur
 
         for(int i = 0 ; i < this.plateau.getTabPieces().length ; i++) //affichage des pièces
         {
-            this.ihm.ajoutElements(x,y, "bronze.png");
-            x += 85;
+            if(this.plateau.getTabPieces()[i] != null)
+            {
+                this.ihm.ajoutElements(x,y, "bronze.png");
+                x += 85;
+            }
         }
     }
 

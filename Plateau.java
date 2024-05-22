@@ -129,52 +129,58 @@ public class Plateau implements IRessource
 		String detail = "Detail :\n ";
 
 		scorePiece = 0;
-		for (int i = tabPieces.length; i > 0; i--)
+		for (int i = 1; i < tabPieces.length; i++)
 		{
-			if (scorePiece == 0 && tabPieces[i] != null)
-				scorePiece = (i+1)*(i+1);
+			if (tabPieces[i] == null)
+				scorePiece = i*i;
 		}
 
-		detail = detail + "Pièces      : " + scorePiece + " pt \n ";
+		detail += "Pièces      : " + scorePiece + " pt \n ";
 
 		score = scorePiece;
 
+
 		int cptCol = 1;
-		for (int col = 0; col < tabEpices.length; col++)
+		for (int col = 0; col < tabEpices[0].length; col++) // 0 - 5
 		{
 			scoreCol = 0;
-			if      (tabEpices[col][2] != null)
-					scoreCol=10;
-			else if (tabEpices[col][1] != null)
-					scoreCol= 2;
+			if      (tabEpices[0][col] != null)
+				scoreCol=10;
+			else if (tabEpices[1][col] != null)
+				scoreCol= 2;
 
-			detail = detail + "Colonne " + cptCol + "   : " + String.format("%02d", scoreCol) + " pt\n ";
-			score = score + scoreCol;
+			detail += "Colonne " + cptCol + "   : " + String.format("%2d", scoreCol) + " pt\n ";
+			score += scoreCol;
 
 			cptCol++;
 		}
 
 		int cptLig = 1;
 		int cptPieceLig = 0;
-		for (int lig = 0; lig < tabEpices[0].length; lig++)
+		scoreLig = 0;
+
+
+
+		int cptEpices = 0;
+		for(int i = this.tabEpices.length-1 ; i > -1 ; i--)
 		{
 			scoreLig = 0;
-			for (int col=0; col < tabEpices.length; col++)
+			for(int j = 0 ; j < this.tabEpices[i].length ; j++)
 			{
-				if (tabEpices[lig][col] != null)
-					cptPieceLig++;
+				if(this.tabEpices[i][j] != null)
+				{
+					cptEpices++;
+					if (cptEpices>=2)
+					{
+						scoreLig += cptEpices;
+					}
+				}
+
 			}
-			if (cptPieceLig >=2 && cptPieceLig <= tabEpices.length + 1)
-				for (int j=2; j <= cptPieceLig; j++)
-					scoreLig+=j;
-
-			detail = detail + "Ligne   " + cptLig + "   : " + String.format("%02d", scoreLig) + " pt\n ";
-			score = score + scoreLig;
-
-			cptLig++;
+			detail += "Ligne   " + (this.tabEpices.length - i) + "   : " + String.format("%2d", scoreLig) + " pt\n ";
+			score += scoreLig;
+			cptEpices = 0;
 		}
-
-		detail = "Score : " + score + "point" + (score>1?"s":"") + "\n\n" + detail;
 
 		this.score = score;
 		this.detailScore = detail;
@@ -213,6 +219,10 @@ public class Plateau implements IRessource
 			s += "+\n" + nbPiece + " pièces";
 		else
 			s += "+\n" + nbPiece + " pièce";
+
+		if (getDetailScore() != null)
+			s += "\nScore : " + getScore() + " point" + (getScore()>1?"s":"") + "\n";
+			s += "\n" + getDetailScore();
 
 		return s;
 	}
