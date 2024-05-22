@@ -31,7 +31,7 @@ public enum Epice implements IRessource
 
 	public String toString()
 	{
-		return "Epice " + this.name().toUpperCase();
+		return "Epice " + this.name();
 	}
 
 }
