@@ -37,7 +37,6 @@ public class Interface extends JFrame
 
     public void ajoutElements(int x, int y, String url)
     {
-        System.out.print("Ok");
         ImageIcon image = new ImageIcon(getClass().getResource("/images/" + url));
         JLabel imgLabel = new JLabel(image);
         imgLabel.setBounds(x, y, image.getIconWidth(), image.getIconHeight());
