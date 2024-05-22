@@ -1,8 +1,14 @@
 import inter.IRessource;
-import java.util.List;
 import java.util.ArrayList;
-import java.util.Arrays;
 
+/**
+ * Cet classe créé la Pioche utilisée dans le jeu. Elle est composée de Jetons.
+ * Ces Jetons sont placés dans un ordre donné par les professeurs pour être capable de démontrer des scénarios précis du jeu.
+ * @author Antione Paunet, IUT du Havre
+ * @author Mael Vauthier,  IUT du Havre
+ * @author Martin Ravenel, IUT du Havre
+ * @version 1.0 , 2024-05-23
+*/
 
 public class Pioche implements IRessource
 {
@@ -41,25 +47,25 @@ public class Pioche implements IRessource
 		this.pioche.add(new Jeton(Epice.POIVRE   ));
 
 
-/*	Ordre des jetons : 
+		/*	Ordre des jetons : 
 
-Poivre
-Sumac
-Curcuma
-Cardamone
-Or
-Safran
-Sesame
-Poivre
-Argent
-Argent
-Paprika
-Safran
-Safran
-Safran
-Cannelle
+		Poivre
+		Sumac
+		Curcuma
+		Cardamone
+		Or
+		Safran
+		Sesame
+		Poivre
+		Argent
+		Argent
+		Paprika
+		Safran
+		Safran
+		Safran
+		Cannelle
 
-*/
+		*/
 	}
 
 }

@@ -1,20 +1,23 @@
-import java.util.ArrayList;
 import inter.IRessource;
+
+/**
+ * Cette classe créé le Plateau, composé des Jetons.
+ * Elle se charge aussi du calcul du score du joueur.
+ * @author Antione Paunet, IUT du Havre
+ * @author Mael Vauthier,  IUT du Havre
+ * @author Martin Ravenel, IUT du Havre
+ * @version 1.0 , 2024-05-23
+*/
 
 public class Plateau implements IRessource
 {
 	private static final int NB_PIECE_MAX = 15 ;
 
-	private int nbPiece ;
-
-	private int score;
-
+	private int nbPiece ,score;
 	private String detailScore;
 
 	private Pioche pioche;
-
 	private Epice[][] tabEpices;
-
 	private Piece[] tabPieces;
 
 	public Plateau()
