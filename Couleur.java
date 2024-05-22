@@ -2,14 +2,14 @@ import java.awt.*;
 
 public enum Couleur
 {
-	BLANC  ( 255, 255, 255 ),
-	JAUNE  ( 255, 255, 0   ),
-	ROUGE  ( 255, 0  , 0   ),
-	ORANGE ( 255, 100, 0   ),
-	VIOLET ( 255, 255, 255 ),
-	BRUN   ( 88 , 41 , 0   ),
-	VERT   ( 0  , 255, 0   ),
-	NOIR   ( 0  , 0  , 0   );
+	BLANC ( 255, 255, 255 ),
+	JAUNE ( 255, 255, 0   ),
+	ROUGE ( 255, 0  , 0   ),
+	ORANGE( 255, 100, 0   ),
+	VIOLET( 255, 255, 255 ),
+	BRUN  ( 88 , 41 , 0   ),
+	VERT  ( 0  , 255, 0   ),
+	NOIR  ( 0  , 0  , 0   );
 
 	private int r, v, b;
 
