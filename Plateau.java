@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import inter.IRessource;
 
 /**
@@ -25,6 +26,16 @@ public class Plateau implements IRessource
 		this.pioche = new Pioche();
 		this.tabEpices = new Epice[3][5];
 		this.tabPieces = new Piece[8];
+	}
+
+	public Epice[][] getTabEpices()
+	{
+		return Arrays.copyOf(this.tabEpices, this.tabEpices.length);
+	}
+
+	public Piece[] getTabPieces()
+	{
+		return Arrays.copyOf(this.tabPieces, this.tabPieces.length);
 	}
 
 	public int getScore() { return this.score;}
@@ -197,26 +208,6 @@ public class Plateau implements IRessource
 			s += "+\n" + nbPiece + " pièce";
 
 		return s;
-	}
-
-
-	public static void main( String[] args )
-	{
-		Plateau p1 = new Plateau();
-
-
-		//Début du mode CUI
-		System.out.println(p1);
-
-		System.out.print( "\n");
-
-		System.out.println("\nAjout des ressources à partir des jetons de la pioche\n");
-		for(int i = 0 ; i < Plateau.NB_PIECE_MAX ; i++)
-		{
-			System.out.print( p1.ajouterRessource(p1.pioche.tirerJeton()) + "\n" );
-		}
-		System.out.print( "\n");
-		System.out.println(p1);
 	}
 
 
