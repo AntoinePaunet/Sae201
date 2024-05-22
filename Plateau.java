@@ -137,6 +137,8 @@ public class Plateau implements IRessource
 
 		//Début du mode CUI
 		System.out.println(p1);
+
+		System.out.println("\nAjout des ressources à partir des jetons de la pioche");
 		for(int i = 0 ; i < Plateau.NB_PIECE_MAX ; i++)
 		{
 			System.out.print( p1.ajouterRessource(p1.pioche.tirerJeton()) + "\n" );
