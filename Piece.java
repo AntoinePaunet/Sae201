@@ -20,7 +20,7 @@ public enum Piece implements IRessource
 
 	public String toString()
 	{
-		return "Piece " + this.name().toUpperCase() + " " + this.valeur;
+		return "Piece " + this.name().toUpperCase() + " "+ this.valeur;
 	}
 
 }

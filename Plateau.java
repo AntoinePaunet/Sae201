@@ -110,6 +110,7 @@ public class Plateau implements IRessource
 	{
 		Plateau p1 = new Plateau();
 
+
 		//Début du mode CUI
 		System.out.println(p1);
 		for(int i = 0 ; i < Plateau.NB_PIECE_MAX ; i++)
