@@ -36,21 +36,15 @@ public class Plateau implements IRessource
 			return false;
 		} else if ( r.getType() instanceof Piece)
 		{
-			int cpt = ((Piece) r.getType()).getvaleur();
-			if(((Piece) r.getType()).name().equals("OR"))
-			{
-				for(int i = 0 ; (i < this.tabPieces.length) ; i++)
-				{
-					if(this.tabPieces[i] == null)
-					{
-						this.tabPieces[i] = ((Piece) r.getType());
-						cpt--;
-					}
+		int cpt = ((Piece) r.getType()).getvaleur();
+			for(int i = 0 ; (i < this.tabPieces.length) ; i++) {
+				if (this.tabPieces[i] == null) {
+					this.tabPieces[i] = ((Piece) r.getType());
+					cpt--;
+				}
 
-					if(cpt == 0)
-					{
-						return true;
-					}
+				if (cpt == 0) {
+					return true;
 				}
 			}
 		}
@@ -60,7 +54,7 @@ public class Plateau implements IRessource
 
 	public String toString()
 	{
-		String s = "Etat du plateau" ;
+		String s = "Etat du plateau:\n" ;
 
 		for( int i1 = 0 ; i1 < 3 ; i1 ++ )
 		{
@@ -69,8 +63,11 @@ public class Plateau implements IRessource
 			s += "+";
 
 			for( int i2 = 0 ; i2 < 5 ; i2 ++ )
-				s += "+ " + String.format("%3s", this.tabEpices[i1][12].name().substring(0, 2) ) +  " | " ;
-			s += "|";
+				if(this.tabEpices[i1][i2] != null)
+					s += "+ " + String.format("%3s", this.tabEpices[i1][i2].name().substring(0, 2) ) +  " | " ;
+				else
+					s+= "+   | ";
+			s += "|\n";
 		}
 		return s;
 	}
@@ -78,7 +75,9 @@ public class Plateau implements IRessource
 
 	public static void main( String[] args )
 	{
-		new Plateau();
+		Plateau p1 = new Plateau();
+		p1.ajouterRessource(p1.pioche.tirerJeton());
+		System.out.println(p1);
 	}
 
 

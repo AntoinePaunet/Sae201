@@ -15,7 +15,7 @@ public class Pioche implements IRessource
 
 	public Jeton tirerJeton()
 	{
-		return this.pioche.get(this.pioche.size());
+		return this.pioche.get(this.pioche.size()-1);
 	}
 
 	private void initPioche() 
