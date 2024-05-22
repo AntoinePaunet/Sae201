@@ -49,23 +49,43 @@ public class Plateau implements IRessource
 
 		} else if ( r.getType() instanceof Piece)
 		{
-		int cpt = ((Piece) r.getType()).getvaleur();
-		System.out.println(cpt);
+			int cpt = ((Piece) r.getType()).getvaleur();
+			int nbSlotsLibre = 0;
 
-			for(int i = 0 ; (i < this.tabPieces.length) ; i++)
+
+			for(int i = 0 ; i < this.tabPieces.length ; i++)
 			{
+				if(this.tabPieces[i] == null)
+				{
+					nbSlotsLibre++;
+				}
+			}
+
+			if(nbSlotsLibre < cpt) //Si le nombre de slots de pièce est plus petit que la valeur de la pièce on annule
+			{
+				return false;
+			}
+
+
+
+			for(int i = 0 ; i < this.tabPieces.length ; i++)
+			{
+				if (cpt == 0)
+				{
+					return true;
+				}
+
 				if (this.tabPieces[i] == null)
 				{
-					this.tabPieces[i] = ((Piece) r.getType());
+					this.tabPieces[i] = Piece.BRONZE;
 					this.nbPiece++;
 					cpt--;
 				}
-
-				if (cpt == 0) {
-					return true;
-				}
 			}
 		}
+
+		System.out.println(r.getType() + "         : " + false);
+
 		return false;
 
 	}
