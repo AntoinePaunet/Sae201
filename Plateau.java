@@ -35,7 +35,6 @@ public class Plateau implements IRessource
 							if(this.tabEpices[i2][i] == null)
 							{
 								this.tabEpices[i2][i] = (Epice) r.getType();
-								this.nbPiece++;
 								return true;
 							}
 						}
@@ -43,7 +42,6 @@ public class Plateau implements IRessource
 					}else if(this.tabEpices[0][i] == null) //Si la ressource n'est pas la même
 					{
 						this.tabEpices[0][i] = (Epice) r.getType();
-						this.nbPiece++;
 						return true;
 					}
 				}
@@ -72,7 +70,7 @@ public class Plateau implements IRessource
 	public String toString()
 	{
 		String s = "";
-		if(this.nbPiece == 0)
+		if(this.tabEpices[0][0] == null && this.tabPieces[0] == null)
 		{
 			s = "Etat initial du Plateau\n";
 		}else{
@@ -88,14 +86,21 @@ public class Plateau implements IRessource
 
 			for( int i2 = 0 ; i2 < 5 ; i2 ++ )
 				if(this.tabEpices[i1][i2] != null)
-					s += " " + String.format("%3s", this.tabEpices[i1][i2].name().substring(0, 2) ) +  " |" ;
+					s += " " + this.tabEpices[i1][i2].getLibCourt() +  " |" ;
 				else
 					s+= "     |";
 			s += "\n";
 		}
 		for( int i2 = 0 ; i2 < 5 ; i2 ++ )
 			s += "+-----";
-		s += "+\n";
+
+		if(nbPiece > 1)
+		{
+			s += "+\n" + nbPiece + " pièces";
+		}else {
+			s += "+\n" + nbPiece + " pièce";
+		}
+
 
 		return s;
 	}
@@ -108,10 +113,11 @@ public class Plateau implements IRessource
 
 		//Début du mode CUI
 		System.out.println(p1);
-		p1.ajouterRessource(p1.pioche.tirerJeton());
-		p1.ajouterRessource(p1.pioche.tirerJeton());
-		p1.ajouterRessource(p1.pioche.tirerJeton());
-		p1.ajouterRessource(p1.pioche.tirerJeton());
+		for(int i = 0 ; i < Plateau.NB_PIECE_MAX ; i++)
+		{
+			p1.ajouterRessource(p1.pioche.tirerJeton());
+		}
+
 		System.out.println(p1);
 	}
 

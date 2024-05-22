@@ -19,9 +19,9 @@ public enum Epice implements IRessource
 		this.coul = coul;
 	}
 
-	public String getLibCoul()
+	public String getLibCourt()
 	{
-		return this.coul.getSymbole();
+		return this.name().substring(0, 3);
 	}
 
 	public Couleur getCouleur()
