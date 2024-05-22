@@ -94,11 +94,10 @@ public class Plateau implements IRessource
 	{
 		String s = "";
 		if(this.tabEpices[0][0] == null && this.tabPieces[0] == null)
-		{
 			s = "Etat initial du Plateau\n";
-		}else{
+		
+		else
 			s = "Etat final du Plateau\n";
-		}
 
 
 		for( int i1 = 0 ; i1 < 3 ; i1 ++ )
