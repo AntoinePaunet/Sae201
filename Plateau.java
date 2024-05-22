@@ -32,7 +32,7 @@ public class Plateau
 							if(this.tabEpices[i2][i] == null)
 							{
 								this.tabEpices[i2][i] = (Epice) r.getType();
-								System.out.println( String.format("%14s", r.getType()+ ": true") );
+								System.out.print( String.format("%-20s", r.getType()) + " : "  );
 								return true;
 							}
 						}
@@ -41,7 +41,7 @@ public class Plateau
 					else if(this.tabEpices[0][i] == null) //Si la ressource n'est pas la même
 					{
 						this.tabEpices[0][i] = (Epice) r.getType();
-						System.out.println( String.format("%14s", r.getType()+ ": true") );
+						System.out.print( String.format("%-20s", r.getType()) + " : "  );
 						return true;
 					}
 				}
@@ -63,7 +63,7 @@ public class Plateau
 
 			if(nbSlotsLibre < cpt) //Si le nombre de slots de pièce est plus petit que la valeur de la pièce on annule
 			{
-				System.out.println( String.format("%14s", r.getType()+ ": false") );
+				System.out.print( String.format("%-20s", r.getType()) + " : "  );
 				return false;
 			}
 
@@ -73,7 +73,7 @@ public class Plateau
 			{
 				if (cpt == 0)
 				{
-					System.out.println( String.format("%14s", r.getType()+ ": true") );
+					System.out.print( String.format("%-20s", r.getType()) + " : "  );
 					return true;
 				}
 
@@ -86,7 +86,7 @@ public class Plateau
 			}
 		}
 
-		System.out.println( String.format("%14s", r.getType()+ ": false") );
+		System.out.print( String.format("%-20s", r.getType()) + " : "  );
 		return false;
 
 	}
@@ -134,11 +134,14 @@ public class Plateau
 
 		//Début du mode CUI
 		System.out.println(p1);
+		System.out.println("\n");
+
 		for(int i = 0 ; i < Plateau.NB_PIECE_MAX ; i++)
 		{
 			System.out.print( p1.ajouterRessource(p1.pioche.tirerJeton()) + "\n" );
 		}
 
+		System.out.println("\n");
 		System.out.println(p1);
 	}
 
