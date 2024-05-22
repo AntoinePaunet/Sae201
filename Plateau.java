@@ -36,6 +36,11 @@ public class Plateau implements IRessource
 		return Arrays.copyOf(this.tabPieces, this.tabPieces.length);
 	}
 
+	public Pioche getPioche()
+	{
+		return pioche;
+	}
+
 	public int getScore() { return this.score;}
 
 	public String getDetailScore() { return this.detailScore;}

@@ -2,13 +2,13 @@ import javax.swing.*;
 
 public class Interface extends JFrame
 {
-    private JPanel panel;
+    private JLayeredPane panel;
 
     public Interface()
     {
         this.setTitle( "La route des epices" );
         this.setSize( 900 , 535 );
-        this.panel = new JPanel();
+        this.panel = new JLayeredPane();
 
 
         this.setIconImage(new ImageIcon(getClass().getResource("/images/paprika.png")).getImage());
@@ -37,7 +37,11 @@ public class Interface extends JFrame
 
     public void ajoutElements(int x, int y, String url)
     {
-
+        System.out.print("Ok");
+        ImageIcon image = new ImageIcon(getClass().getResource("/images/" + url));
+        JLabel imgLabel = new JLabel(image);
+        imgLabel.setBounds(x, y, image.getIconWidth(), image.getIconHeight());
+        this.panel.add(imgLabel, JLayeredPane.DRAG_LAYER);
     }
 
 

@@ -27,7 +27,19 @@ public enum Couleur
 
 	public String getSymbole()
 	{
-		return this.name() + ".png";
+		String res = "";
+		switch(this.name())
+		{
+			case "BLANC" : res = "sesame"; 		break;
+			case "JAUNE" : res = "curcuma"; 	break;
+			case "ROUGE" : res = "paprika"; 	break;
+			case "ORANGE" : res = "safran"; 	break;
+			case "VIOLET" : res = "sumac"; 		break;
+			case "BRUN" : res = "canelle"; 		break;
+			case "VERT" : res = "cardamone"; 	break;
+			case "NOIR" : res = "poivre";   	break;
+		}
+		return res+".png";
 	}
 
 	public static int getNbCouleur()
