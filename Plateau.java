@@ -102,10 +102,8 @@ public class Plateau
 
 	public void score()
 	{
-		int scorePiece, scoreCol, scoreLig;
+		int score, scorePiece, scoreCol, scoreLig;
 		String detail = "Detail :\n ";
-
-		score = 0;
 
 		scorePiece = 0;
 		for (int i = tabPieces.length; i > 0; i--)
@@ -113,7 +111,10 @@ public class Plateau
 			if (scorePiece == 0 && tabPieces[i] != null)
 				scorePiece = (i+1)*(i+1);
 		}
-		detail = detail + "Pièces      : " + scorePiece + " pt \n "
+
+		detail = detail + "Pièces      : " + scorePiece + " pt \n ";
+
+		score = scorePiece;
 
 		int cptCol = 1;
 		for (int col = 0; col < tabEpices.length; col++)
@@ -123,7 +124,10 @@ public class Plateau
 					scoreCol=10;
 			else if (tabEpices[col][1] != null)
 					scoreCol= 2;
+
 			detail = detail + "Colonne " + cptCol + "   : " + String.format("%02d", scoreCol) + " pt\n ";
+			score = score + scoreCol;
+
 			cptCol++;
 		}
 
@@ -140,12 +144,17 @@ public class Plateau
 			if (cptPieceLig >=2 && cptPieceLig <= tabEpices.length + 1)
 				for (int j=2; j <= cptPieceLig; j++)
 					scoreLig+=j;
+
 			detail = detail + "Ligne   " + cptLig + "   : " + String.format("%02d", scoreLig) + " pt\n ";
+			score = score + scoreLig;
+
 			cptLig++;
 		}
 
+		detail = "Score : " + score + "point" + (score>1?"s":"") + "\n\n" + detail;
+
 		this.score = score;
-		this.detailScore = "Score : " + score + "point" + (score > 1 ? "s" : "") "\n\n" + detail;
+		this.detailScore = detail;
 
 	}
 
