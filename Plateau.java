@@ -50,15 +50,18 @@ public class Plateau implements IRessource
 		} else if ( r.getType() instanceof Piece)
 		{
 		int cpt = ((Piece) r.getType()).getvaleur();
+		System.out.println(cpt);
+
 			for(int i = 0 ; (i < this.tabPieces.length) ; i++)
 			{
-				if (this.tabPieces[i] == null) {
+				if (this.tabPieces[i] == null)
+				{
 					this.tabPieces[i] = ((Piece) r.getType());
+					this.nbPiece++;
 					cpt--;
 				}
 
 				if (cpt == 0) {
-					this.nbPiece++;
 					return true;
 				}
 			}
