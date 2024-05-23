@@ -75,7 +75,8 @@ public class Plateau implements IRessource
 							}
 						}
 
-					}else if(this.tabEpices[2][i] == null && !bOk) //Si la ressource n'est pas la même
+					}
+					else if(this.tabEpices[2][i] == null && !bOk) //Si la ressource n'est pas la même
 					{
 						this.tabEpices[2][i] = (Epice) r.getType();
 						bOk = true;
@@ -83,7 +84,8 @@ public class Plateau implements IRessource
 				}
 			}
 
-		} else if ( r.getType() instanceof Piece)
+		}
+		else if ( r.getType() instanceof Piece)
 		{
 			int cpt = ((Piece) r.getType()).getvaleur();
 			int nbSlotsLibre = 0;
