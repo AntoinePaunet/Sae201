@@ -76,10 +76,10 @@ public class Plateau implements IRessource
 							}
 						}
 
-					}else if(this.tabEpices[2][i] == null) //Si la ressource n'est pas la même
+					}else if(this.tabEpices[2][i] == null && !bOk) //Si la ressource n'est pas la même
 					{
 						this.tabEpices[2][i] = (Epice) r.getType();
-						bOk =  true;
+						bOk = true;
 					}
 				}
 			}
@@ -97,7 +97,7 @@ public class Plateau implements IRessource
 			}
 
 			if(nbSlotsLibre < cpt) //Si le nombre de slots de pièce est plus petit que la valeur de la pièce on annule
-				bOk = false;
+				return false;
 
 
 			for(int i = 0 ; i < this.tabPieces.length ; i++)
