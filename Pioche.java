@@ -19,6 +19,11 @@ public class Pioche implements IRessource
 		this.initPioche();
 	}
 
+
+	/**
+	 * Permet de retrouner le jeton en haut de pile tout en l'enlevant de celle-ci
+	 * @return retourne le jeton en haut de la pile
+	 */
 	public Jeton tirerJeton()
 	{
 		Jeton res = this.pioche.get(this.pioche.size()-1);
@@ -26,6 +31,9 @@ public class Pioche implements IRessource
 		return res;
 	}
 
+	/**
+	 * Prépare la pioche de manière non aléatoire en créant des jetons
+	 */
 	private void initPioche() 
 	{
 		this.pioche = new ArrayList<Jeton>();
@@ -45,27 +53,5 @@ public class Pioche implements IRessource
 		this.pioche.add(new Jeton(Epice.CURCUMA  ));
 		this.pioche.add(new Jeton(Epice.SUMAC    ));
 		this.pioche.add(new Jeton(Epice.POIVRE   ));
-
-
-		/*	Ordre des jetons : 
-
-		Poivre
-		Sumac
-		Curcuma
-		Cardamone
-		Or
-		Safran
-		Sesame
-		Poivre
-		Argent
-		Argent
-		Paprika
-		Safran
-		Safran
-		Safran
-		Cannelle
-
-		*/
 	}
-
 }

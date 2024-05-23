@@ -26,6 +26,12 @@ public enum Epice implements IRessource
 		this.coul = coul;
 	}
 
+
+	/**
+	 * Donne les trois premières lettres de l'épice pour l'affichage CUI
+	 *
+	 * @return Les trois premières lettres de l'épice
+	 */
 	public String getLibCourt()
 	{
 		return this.name().substring(0, 3);

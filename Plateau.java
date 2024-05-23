@@ -125,9 +125,12 @@ public class Plateau implements IRessource
 
 	public void score()
 	{
+		//Affichage des détails
 		int score, scorePiece, scoreCol, scoreLig;
 		String detail = "Detail :\n ";
 
+
+		//Compteur pour le score des pièces
 		scorePiece = 0;
 		for (int i = 1; i < tabPieces.length; i++)
 		{
@@ -140,6 +143,7 @@ public class Plateau implements IRessource
 		score = scorePiece;
 
 
+		//Compteur pour le score des colonnes
 		int cptCol = 1;
 		for (int col = 0; col < tabEpices[0].length; col++) // 0 - 5
 		{
@@ -160,7 +164,7 @@ public class Plateau implements IRessource
 		scoreLig = 0;
 
 
-
+		//Compteur pour le score des colonnes
 		int cptEpices = 0;
 		for(int i = this.tabEpices.length-1 ; i > -1 ; i--)
 		{
@@ -214,15 +218,16 @@ public class Plateau implements IRessource
 		for( int i2 = 0 ; i2 < 5 ; i2 ++ )
 			s += "+-----";
 
-
 		if(nbPiece > 1)
 			s += "+\n" + nbPiece + " pièces";
 		else
 			s += "+\n" + nbPiece + " pièce";
 
 		if (getDetailScore() != null)
+		{
 			s += "\nScore : " + getScore() + " point" + (getScore()>1?"s":"") + "\n";
 			s += "\n" + getDetailScore();
+		}
 
 		return s;
 	}

@@ -1,3 +1,11 @@
+/**
+ * Cette classe permet de controler et lier la classe Interface avec les autres classes métier
+ * @author Antione Paunet, IUT du Havre
+ * @author Mael Vauthier,  IUT du Havre
+ * @author Martin Ravenel, IUT du Havre
+ * @version 1.0 , 2024-05-23
+ */
+
 public class Controleur
 {
     private Interface ihm;
@@ -15,21 +23,22 @@ public class Controleur
         System.out.print( "\n");
 
         System.out.println("\nAjout des ressources à partir des jetons de la pioche\n");
+
         for(int i = 0 ; i < 15 ; i++)
         {
             System.out.print( this.plateau.ajouterRessource(this.plateau.getPioche().tirerJeton()) + "\n" );
         }
+
         System.out.print("\n");
+
         this.plateau.score();
 
         System.out.print( "\n");
+
         System.out.println(this.plateau + "\n");
 
 
-
         toInterface();
-
-
     }
 
 
