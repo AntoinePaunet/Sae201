@@ -24,6 +24,11 @@ public class Plateau implements IRessource
 	private Piece[] 	tabPieces;
 
 
+/**
+ * Constructeur de Plateau
+ * Initialise la Pioche ainsi que les tableaux de Pieces et Epices.
+*/
+
 	public Plateau()
 	{
 		this.pioche 	= 	new Pioche();
