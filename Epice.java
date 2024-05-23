@@ -38,10 +38,23 @@ public enum Epice implements IRessource
 		return this.name().substring(0, 3);
 	}
 
+	/**
+	 * Donne la couleur de l'Epice
+	 *
+	 * @return Les 
+	 */
+
 	public Couleur getCouleur()
 	{
 		return this.coul;
 	}
+
+
+	/**
+	 * Donne les trois premières lettres de l'épice pour l'affichage CUI
+	 *
+	 * @return Les trois premières lettres de l'épice
+	 */
 
 	public String toString()
 	{
