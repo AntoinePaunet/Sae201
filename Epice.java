@@ -28,9 +28,9 @@ public enum Epice implements IRessource
 
 
 	/**
-	 * Donne les trois premières lettres de l'épice pour l'affichage CUI
+	 * Donne les trois premières lettres de l'epice pour l'affichage CUI
 	 *
-	 * @return Les trois premières lettres de l'épice
+	 * @return Les trois premières lettres de l'Epice
 	 */
 
 	public String getLibCourt()
@@ -53,7 +53,7 @@ public enum Epice implements IRessource
 	/**
 	 * Donne le type de jeton et son nom.
 	 *
-	 * @return Les trois premières lettres de l'épice
+	 * @return le mot "Epice" puis le nom de l'Epice
 	 */
 
 	public String toString()
