@@ -22,9 +22,9 @@ public enum Epice implements IRessource
 	private Couleur coul;
 
 	/**
-	 * Donne les trois premières lettres de l'epice pour l'affichage CUI
+	 * Donne les trois premières lettres de l'epice pour l'affichage CUI.
 	 *
-	 * @param coul la Couleur de l'Epice
+	 * @param coul la Couleur de l'Epice.
 	 */
 
 	private Epice( Couleur coul )
@@ -34,9 +34,9 @@ public enum Epice implements IRessource
 
 
 	/**
-	 * Donne les trois premières lettres de l'epice pour l'affichage CUI
+	 * Donne les trois premières lettres de l'epice pour l'affichage CUI.
 	 *
-	 * @return Les trois premières lettres de l'Epice
+	 * @return Les trois premières lettres de l'Epice.
 	 */
 
 	public String getLibCourt()
