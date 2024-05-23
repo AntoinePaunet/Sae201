@@ -84,7 +84,8 @@ public class Plateau implements IRessource
 				}
 			}
 
-		} else if ( r.getType() instanceof Piece)
+		}
+		else if ( r.getType() instanceof Piece)
 		{
 			int cpt = ((Piece) r.getType()).getvaleur();
 			int nbSlotsLibre = 0;
