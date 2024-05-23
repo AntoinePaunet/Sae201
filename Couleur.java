@@ -40,6 +40,7 @@ public enum Couleur
 	 *
 	 * @return le nom de l'épice.png afin d'être utilisée dans l'interface
 	 */
+
 	public String getSymbole()
 	{
 		String res = "";
