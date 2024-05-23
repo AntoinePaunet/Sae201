@@ -21,6 +21,12 @@ public enum Epice implements IRessource
 
 	private Couleur coul;
 
+	/**
+	 * Donne les trois premières lettres de l'epice pour l'affichage CUI
+	 *
+	 * @param coul la Couleur de l'Epice
+	 */
+
 	private Epice( Couleur coul )
 	{
 		this.coul = coul;
