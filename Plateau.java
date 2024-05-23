@@ -103,7 +103,7 @@ public class Plateau implements IRessource
 			for(int i = 0 ; i < this.tabPieces.length ; i++)
 			{
 				if (cpt == 0)
-					bOk =  true;
+					return true;
 
 				if (this.tabPieces[i] == null)
 				{
