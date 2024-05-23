@@ -112,10 +112,7 @@ public class Plateau implements IRessource
 				}
 			}
 		}
-		bOk =  false;
 		System.out.print( String.format( "%-20s", r.getType()) + ": ");
-		
-
 		return bOk ;
 
 	}
