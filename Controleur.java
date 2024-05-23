@@ -71,9 +71,9 @@ public class Controleur
     }
 
 
+	//Lancement de l'application
 
-
-    public static void main( String[] args )//Lancement de l'application
+    public static void main( String[] args )
     {
         new Controleur();
     }
