@@ -24,7 +24,6 @@ public class Plateau implements IRessource
 	private Piece[] 	tabPieces;
 
 
-
 	public Plateau()
 	{
 		this.pioche 	= 	new Pioche();
