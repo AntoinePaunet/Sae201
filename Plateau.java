@@ -96,20 +96,19 @@ public class Plateau implements IRessource
 					nbSlotsLibre++;
 			}
 
-			if(nbSlotsLibre < cpt) //Si le nombre de slots de pièce est plus petit que la valeur de la pièce on annule
-				return false;
-
-
-			for(int i = 0 ; i < this.tabPieces.length ; i++)
+			if(nbSlotsLibre >= cpt) //Si il y a assez de slots de libre par rapport au prix de la pièce
 			{
-				if (cpt == 0)
-					return true;
-
-				if (this.tabPieces[i] == null)
+				for(int i = 0 ; i < this.tabPieces.length ; i++)
 				{
-					this.tabPieces[i] = Piece.BRONZE;
-					this.nbPiece++;
-					cpt--;
+					if (cpt == 0)
+						bOk = true;
+
+					if (this.tabPieces[i] == null && !bOk)
+					{
+						this.tabPieces[i] = Piece.BRONZE;
+						this.nbPiece++;
+						cpt--;
+					}
 				}
 			}
 		}
