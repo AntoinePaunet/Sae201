@@ -57,7 +57,7 @@ public class Plateau implements IRessource
 	{
 		boolean bOk = false;
 
-		if( r.getType() instanceof Epice) //Si c'est une épice alors
+		if( r.getType() instanceof Epice) // Gestion des Epices
 		{
 			for(int i = 0 ; i < this.tabEpices[0].length ; i++)
 			{
@@ -85,7 +85,7 @@ public class Plateau implements IRessource
 			}
 
 		}
-		else if ( r.getType() instanceof Piece)
+		else if ( r.getType() instanceof Piece) // Gestion des Epices
 		{
 			int cpt = ((Piece) r.getType()).getvaleur();
 			int nbSlotsLibre = 0;
