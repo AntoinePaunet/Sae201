@@ -130,8 +130,8 @@ public class Plateau implements IRessource
 		scorePiece = 0;
 		for (int i = 1; i < tabPieces.length; i++)
 		{
-			if (tabPieces[i] == null)
-				scorePiece = i*i;
+			if (tabPieces[i] != null)
+				scorePiece = (i+1)*(i+1);
 		}
 
 		detail += "Pièces      : " + scorePiece + " pt \n ";
