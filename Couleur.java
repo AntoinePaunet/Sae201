@@ -21,6 +21,11 @@ public enum Couleur
 
 	private int r, v, b;
 
+	/**
+	 * Crée un objet de la classe Couleur avec les paramètres r v b
+	 *
+	 * @return un nouvel objet de la classe Couleur.
+	 */
 	private Couleur( int r , int v , int b )
 	{
 		this.r = r;
@@ -28,6 +33,11 @@ public enum Couleur
 		this.b = b;
 	}
 
+	/**
+	 * Donne la couleur qui correspond à l'instance qui utilise cette méthode
+	 *
+	 * @return un objet de la class Couleur correspondant à l'instance.
+	 */
 	public Color getColor()
 	{
 		return new Color( this.r, this.v, this.b );
@@ -36,14 +46,15 @@ public enum Couleur
 
 
 	/**
-	 * Donne le nom de l'épice selon sa couleur
+	 * Renvoie un nom d'image d'épice
 	 *
 	 * @return le nom de l'épice.png afin d'être utilisée dans l'interface
 	 */
+
 	public String getSymbole()
 	{
 		String res = "";
-		switch(this.name()) //Selon la couleur de l'épice
+		switch( this.name() ) //Selon la couleur de l'épice
 		{
 			case "BLANC" 	: res = "sesame"; 	break;
 			case "JAUNE" 	: res = "curcuma"; 	break;
@@ -54,17 +65,26 @@ public enum Couleur
 			case "VERT" 	: res = "cardamone";break;
 			case "NOIR" 	: res = "poivre";   break;
 		}
-		return res+".png";
+		return res + ".png";
 	}
 
+	/**
+	 * Donne le nombre d'instance de Couleur
+	 *
+	 * @return l'entier correpondant au nombre d'instance de Couleur.
+	 */
 	public static int getNbCouleur()
 	{
 		return Couleur.values().length;
 	}
 
+	/**
+	 * Donne une couleur selon un entier
+	 *
+	 * @return un objet de la classe Couleur, pas utilisé jusqu'a maintenant.
+	 */
 	public static Couleur valueOf( int ordinal )
 	{
 		return Couleur.valueOf(ordinal);
 	}
-
 }

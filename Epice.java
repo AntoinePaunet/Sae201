@@ -21,6 +21,12 @@ public enum Epice implements IRessource
 
 	private Couleur coul;
 
+	/**
+	 * Donne les trois premières lettres de l'epice pour l'affichage CUI.
+	 *
+	 * @param coul la Couleur de l'Epice.
+	 */
+
 	private Epice( Couleur coul )
 	{
 		this.coul = coul;
@@ -28,19 +34,33 @@ public enum Epice implements IRessource
 
 
 	/**
-	 * Donne les trois premières lettres de l'épice pour l'affichage CUI
+	 * Donne les trois premières lettres de l'epice pour l'affichage CUI.
 	 *
-	 * @return Les trois premières lettres de l'épice
+	 * @return Les trois premières lettres de l'Epice.
 	 */
+
 	public String getLibCourt()
 	{
 		return this.name().substring(0, 3);
 	}
 
+	/**
+	 * Donne la couleur de l'Epice
+	 *
+	 * @return La couleur de l'Epice
+	 */
+
 	public Couleur getCouleur()
 	{
 		return this.coul;
 	}
+
+
+	/**
+	 * Donne le type de jeton et son nom.
+	 *
+	 * @return le mot "Epice" puis le nom de l'Epice
+	 */
 
 	public String toString()
 	{

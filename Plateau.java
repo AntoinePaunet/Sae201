@@ -55,6 +55,7 @@ public class Plateau implements IRessource
 
 	public boolean ajouterRessource( Jeton r )
 	{
+		boolean bOk ;
 
 		if( r.getType() instanceof Epice) //Si c'est une épice alors
 		{
@@ -70,16 +71,14 @@ public class Plateau implements IRessource
 							if(this.tabEpices[i2][i] == null)
 							{
 								this.tabEpices[i2][i] = (Epice) r.getType();
-								System.out.print( String.format( "%-20s", r.getType()) + ": ");
-								return true;
+								bOk = true;
 							}
 						}
 
 					}else if(this.tabEpices[2][i] == null) //Si la ressource n'est pas la même
 					{
 						this.tabEpices[2][i] = (Epice) r.getType();
-						System.out.print( String.format( "%-20s", r.getType()) + ": ");
-						return true;
+						bOk =  true;
 					}
 				}
 			}
@@ -93,26 +92,17 @@ public class Plateau implements IRessource
 			for(int i = 0 ; i < this.tabPieces.length ; i++)
 			{
 				if(this.tabPieces[i] == null)
-				{
 					nbSlotsLibre++;
-				}
 			}
 
 			if(nbSlotsLibre < cpt) //Si le nombre de slots de pièce est plus petit que la valeur de la pièce on annule
-			{
-				System.out.print( String.format( "%-20s", r.getType()) + ": ");
-				return false;
-			}
-
+				bOk =  false;
 
 
 			for(int i = 0 ; i < this.tabPieces.length ; i++)
 			{
 				if (cpt == 0)
-				{
-					System.out.print( String.format( "%-20s", r.getType()) + ": ");
-					return true;
-				}
+					bOk =  true;
 
 				if (this.tabPieces[i] == null)
 				{
@@ -122,9 +112,11 @@ public class Plateau implements IRessource
 				}
 			}
 		}
-
+		bOk =  false;
 		System.out.print( String.format( "%-20s", r.getType()) + ": ");
-		return false;
+		
+
+		return bOk ;
 
 	}
 
