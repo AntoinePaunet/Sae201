@@ -19,7 +19,7 @@ public class Pioche implements IRessource
 		this.initPioche();
 	}
 
-	public static int taillePioche;
+	public static int taillePioche; //Permet de connaitre la taille de la pioche à la fin de sa création
 
 
 	/**
@@ -30,6 +30,7 @@ public class Pioche implements IRessource
 	{
 		Jeton res = this.pioche.get(this.pioche.size()-1);
 		this.pioche.remove(this.pioche.size()-1);
+		Pioche.taillePioche -= 1;
 		return res;
 	}
 
