@@ -19,6 +19,8 @@ public class Pioche implements IRessource
 		this.initPioche();
 	}
 
+	public static int taillePioche;
+
 
 	/**
 	 * Permet de retrouner le jeton en haut de pile tout en l'enlevant de celle-ci
@@ -37,6 +39,7 @@ public class Pioche implements IRessource
 	private void initPioche() 
 	{
 		this.pioche = new ArrayList<Jeton>();
+		this.pioche.size();
 
 		this.pioche.add(new Jeton(Epice.CANNELLE ));
 		this.pioche.add(new Jeton(Epice.SAFRAN   ));
@@ -53,5 +56,7 @@ public class Pioche implements IRessource
 		this.pioche.add(new Jeton(Epice.CURCUMA  ));
 		this.pioche.add(new Jeton(Epice.SUMAC    ));
 		this.pioche.add(new Jeton(Epice.POIVRE   ));
+
+		Pioche.taillePioche = this.pioche.size();
 	}
 }

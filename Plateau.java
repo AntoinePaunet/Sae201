@@ -60,7 +60,6 @@ public class Plateau implements IRessource
 		{
 			for(int i = 0 ; i < this.tabEpices[0].length ; i++)
 			{
-
 				if(this.tabEpices[1][i] == null || this.tabEpices[2][i] == null || this.tabEpices[0][i] == null) //Il faut que les cases soient vides pour y placer les éléments
 				{
 					if(this.tabEpices[2][i] != null && this.tabEpices[2][i].name().equals(((Epice) r.getType()).name())) //Si on a la même ressource que dans le tableau
@@ -71,6 +70,7 @@ public class Plateau implements IRessource
 							{
 								this.tabEpices[i2][i] = (Epice) r.getType();
 								bOk = true;
+								break;
 							}
 						}
 
@@ -88,6 +88,7 @@ public class Plateau implements IRessource
 		{
 			int cpt = ((Piece) r.getType()).getvaleur();
 			int nbSlotsLibre = 0;
+
 
 
 			for(int i = 0 ; i < this.tabPieces.length ; i++)
@@ -114,6 +115,7 @@ public class Plateau implements IRessource
 		}
 
 		System.out.print( String.format( "%-20s", r.getType()) + ": ");
+
 		return bOk ;
 	}
 
