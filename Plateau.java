@@ -115,7 +115,6 @@ public class Plateau implements IRessource
 
 		System.out.print( String.format( "%-20s", r.getType()) + ": ");
 		return bOk ;
-
 	}
 
 
