@@ -16,18 +16,21 @@ public class Plateau implements IRessource
 {
 	private static final int NB_PIECE_MAX = 15 ;
 
-	private int nbPiece ,score;
-	private String detailScore;
+	private int 		nbPiece ,score;
+	private String 		detailScore;
 
-	private Pioche pioche;
-	private Epice[][] tabEpices;
-	private Piece[] tabPieces;
+	private Pioche 		pioche;
+
+	private Epice[][] 	tabEpices;
+	private Piece[] 	tabPieces;
+
+
 
 	public Plateau()
 	{
-		this.pioche = new Pioche();
-		this.tabEpices = new Epice[3][5];
-		this.tabPieces = new Piece[8];
+		this.pioche 	= 	new Pioche();
+		this.tabEpices 	= 	new Epice[3][5];
+		this.tabPieces 	= 	new Piece[8];
 	}
 
 	public Epice[][] getTabEpices()
@@ -49,17 +52,20 @@ public class Plateau implements IRessource
 
 	public String getDetailScore() { return this.detailScore;}
 
+
 	public boolean ajouterRessource( Jeton r )
 	{
-		if( r.getType() instanceof Epice)
+
+		if( r.getType() instanceof Epice) //Si c'est une épice alors
 		{
 			for(int i = 0 ; i < this.tabEpices[0].length ; i++)
 			{
-				if(this.tabEpices[1][i] == null || this.tabEpices[2][i] == null || this.tabEpices[0][i] == null)
+
+				if(this.tabEpices[1][i] == null || this.tabEpices[2][i] == null || this.tabEpices[0][i] == null) //Il faut que les cases soient vides pour y placer les éléments
 				{
 					if(this.tabEpices[2][i] != null && this.tabEpices[2][i].name().equals(((Epice) r.getType()).name())) //Si on a la même ressource que dans le tableau
 					{
-						for(int i2 = tabEpices.length-1 ; i2 > -1 ; i2--)
+						for(int i2 = tabEpices.length-1 ; i2 > -1 ; i2--) //On fait dans le sens inverse afin de placer les éléments de bas en haut dans le tableau
 						{
 							if(this.tabEpices[i2][i] == null)
 							{
@@ -159,13 +165,16 @@ public class Plateau implements IRessource
 			cptCol++;
 		}
 
-		int cptLig = 1;
-		int cptPieceLig = 0;
-		scoreLig = 0;
+
 
 
 		//Compteur pour le score des colonnes
-		int cptEpices = 0;
+		int cptEpices 	= 0;
+		int cptLig 		= 1;
+		int cptPieceLig = 0;
+		scoreLig 		= 0;
+
+
 		for(int i = this.tabEpices.length-1 ; i > -1 ; i--)
 		{
 			scoreLig = 0;
@@ -181,8 +190,9 @@ public class Plateau implements IRessource
 				}
 
 			}
+
 			detail += "Ligne   " + (this.tabEpices.length - i) + "   : " + String.format("%2d", scoreLig) + " pt\n ";
-			score += scoreLig;
+			score  += scoreLig;
 			cptEpices = 0;
 		}
 
