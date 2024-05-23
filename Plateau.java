@@ -53,9 +53,10 @@ public class Plateau implements IRessource
 	public String getDetailScore() { return this.detailScore;}
 
 
+
 	public boolean ajouterRessource( Jeton r )
 	{
-		boolean bOk ;
+		boolean bOk = false;
 
 		if( r.getType() instanceof Epice) //Si c'est une épice alors
 		{
@@ -96,7 +97,7 @@ public class Plateau implements IRessource
 			}
 
 			if(nbSlotsLibre < cpt) //Si le nombre de slots de pièce est plus petit que la valeur de la pièce on annule
-				bOk =  false;
+				bOk = false;
 
 
 			for(int i = 0 ; i < this.tabPieces.length ; i++)
