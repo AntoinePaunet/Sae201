@@ -41,7 +41,7 @@ public enum Epice implements IRessource
 	/**
 	 * Donne la couleur de l'Epice
 	 *
-	 * @return Les 
+	 * @return La couleur de l'Epice
 	 */
 
 	public Couleur getCouleur()
@@ -51,7 +51,7 @@ public enum Epice implements IRessource
 
 
 	/**
-	 * Donne les trois premières lettres de l'épice pour l'affichage CUI
+	 * Donne le type de jeton et son nom.
 	 *
 	 * @return Les trois premières lettres de l'épice
 	 */
