@@ -30,7 +30,6 @@ public class Pioche implements IRessource
 	{
 		Jeton res = this.pioche.get(this.pioche.size()-1);
 		this.pioche.remove(this.pioche.size()-1);
-		Pioche.taillePioche -= 1;
 		return res;
 	}
 
@@ -40,7 +39,6 @@ public class Pioche implements IRessource
 	private void initPioche() 
 	{
 		this.pioche = new ArrayList<Jeton>();
-		this.pioche.size();
 
 		this.pioche.add(new Jeton(Epice.CANNELLE ));
 		this.pioche.add(new Jeton(Epice.SAFRAN   ));
