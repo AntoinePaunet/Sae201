@@ -76,7 +76,8 @@ public class Plateau implements IRessource
 							}
 						}
 
-					}else if(this.tabEpices[2][i] == null) //Si la ressource n'est pas la même
+					}
+					else if(this.tabEpices[2][i] == null) //Si la ressource n'est pas la même
 					{
 						this.tabEpices[2][i] = (Epice) r.getType();
 						bOk =  true;
