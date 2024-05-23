@@ -215,6 +215,7 @@ public class Plateau implements IRessource
 					s+= "     |";
 			s += "\n";
 		}
+
 		for( int i2 = 0 ; i2 < 5 ; i2 ++ )
 			s += "+-----";
 
@@ -231,6 +232,4 @@ public class Plateau implements IRessource
 
 		return s;
 	}
-
-
 }
