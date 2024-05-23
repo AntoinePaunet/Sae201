@@ -49,9 +49,8 @@ public class Controleur
             for(int j = 0 ; j < this.plateau.getTabEpices()[i].length ; j++)
             {
                 if(this.plateau.getTabEpices()[i][j] != null)
-                {
-                    this.ihm.ajoutElements(x, y,this.plateau.getTabEpices()[i][j].getCouleur().getSymbole());
-                }
+                	this.ihm.ajoutElements(x, y,this.plateau.getTabEpices()[i][j].getCouleur().getSymbole());
+                
                 x += 160;
             }
             x = 80;
