@@ -57,7 +57,7 @@ public class Plateau implements IRessource
 	{
 		boolean bOk = false;
 
-		if( r.getType() instanceof Epice) //Si c'est une épice alors
+		if( r.getType() instanceof Epice) // Gestion des Epices
 		{
 			for(int i = 0 ; i < this.tabEpices[0].length ; i++)
 			{
@@ -85,7 +85,7 @@ public class Plateau implements IRessource
 			}
 
 		}
-		else if ( r.getType() instanceof Piece)
+		else if ( r.getType() instanceof Piece) // Gestion des Epices
 		{
 			int cpt = ((Piece) r.getType()).getvaleur();
 			int nbSlotsLibre = 0;
@@ -132,8 +132,8 @@ public class Plateau implements IRessource
 		scorePiece = 0;
 		for (int i = 1; i < tabPieces.length; i++)
 		{
-			if (tabPieces[i] == null)
-				scorePiece = i*i;
+			if (tabPieces[i] != null)
+				scorePiece = (i+1)*(i+1);
 		}
 
 		detail += "Pièces      : " + scorePiece + " pt \n ";
@@ -176,9 +176,8 @@ public class Plateau implements IRessource
 				{
 					cptEpices++;
 					if (cptEpices>=2)
-					{
 						scoreLig += cptEpices;
-					}
+					
 				}
 
 			}
@@ -217,6 +216,7 @@ public class Plateau implements IRessource
 					s+= "     |";
 			s += "\n";
 		}
+
 		for( int i2 = 0 ; i2 < 5 ; i2 ++ )
 			s += "+-----";
 
@@ -233,6 +233,4 @@ public class Plateau implements IRessource
 
 		return s;
 	}
-
-
 }
