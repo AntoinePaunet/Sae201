@@ -21,6 +21,7 @@ public class Controleur
         this.plateau = new Plateau();
 
 
+
         //Début du mode CUI
         System.out.println(this.plateau);
 
@@ -28,10 +29,11 @@ public class Controleur
 
         System.out.println("\nAjout des ressources à partir des jetons de la pioche\n");
 
-        for(int i = 0 ; i < 15 ; i++)
-        {
+
+        for(int i = 0 ; i < Pioche.taillePioche ; i++)
+
             System.out.print( this.plateau.ajouterRessource(this.plateau.getPioche().tirerJeton()) + "\n" );
-        }
+
 
         System.out.print("\n");
 
