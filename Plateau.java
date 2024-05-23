@@ -36,26 +36,50 @@ public class Plateau implements IRessource
 		this.tabPieces 	= 	new Piece[8];
 	}
 
+	/**
+	 * Donne le teableau d'Epices
+	 * @return le tableau d'Epices
+	 */
 	public Epice[][] getTabEpices()
 	{
 		return Arrays.copyOf(this.tabEpices, this.tabEpices.length);
 	}
 
+	/**
+	 * Donne le tableau de Pieces
+	 * @return le tableau de Pieces
+	 */
 	public Piece[] getTabPieces()
 	{
 		return Arrays.copyOf(this.tabPieces, this.tabPieces.length);
 	}
 
+	/**
+	 * Donne la Pioche
+	 * @return la Pioche
+	 */
 	public Pioche getPioche()
 	{
 		return pioche;
 	}
 
+	/**
+	 * Donne le score total du joueur
+	 * @return le score
+	 */
 	public int getScore() { return this.score;}
 
+	/**
+	 * Donne le détail du score du joueur
+	 * @return le score
+	 */
 	public String getDetailScore() { return this.detailScore;}
 
-
+	/**
+	 * Ajoute un jeton sur le Plateau
+	 * @param r le jeton à ajouter
+	 * @return le score
+	 */
 
 	public boolean ajouterRessource( Jeton r )
 	{
@@ -124,6 +148,9 @@ public class Plateau implements IRessource
 		return bOk ;
 	}
 
+	/**
+	 * Calcule le score du joueur
+	 */
 
 	public void score()
 	{
@@ -162,8 +189,6 @@ public class Plateau implements IRessource
 		}
 
 
-
-
 		//Compteur pour le score des colonnes
 		int cptEpices 	= 0;
 		int cptLig 		= 1;
@@ -196,6 +221,10 @@ public class Plateau implements IRessource
 
 	}
 
+	/**
+	 * Donne l'affichage du plateau et des scores dans le terminal
+	 * @return le Plateau et le score
+	 */
 
 	public String toString()
 	{
