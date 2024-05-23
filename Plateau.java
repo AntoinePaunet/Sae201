@@ -174,9 +174,8 @@ public class Plateau implements IRessource
 				{
 					cptEpices++;
 					if (cptEpices>=2)
-					{
 						scoreLig += cptEpices;
-					}
+					
 				}
 
 			}
