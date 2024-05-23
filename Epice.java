@@ -32,6 +32,7 @@ public enum Epice implements IRessource
 	 *
 	 * @return Les trois premières lettres de l'épice
 	 */
+
 	public String getLibCourt()
 	{
 		return this.name().substring(0, 3);

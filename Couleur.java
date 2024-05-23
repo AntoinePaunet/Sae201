@@ -43,7 +43,7 @@ public enum Couleur
 	public String getSymbole()
 	{
 		String res = "";
-		switch(this.name()) //Selon la couleur de l'épice
+		switch( this.name() ) //Selon la couleur de l'épice
 		{
 			case "BLANC" 	: res = "sesame"; 	break;
 			case "JAUNE" 	: res = "curcuma"; 	break;
@@ -54,7 +54,7 @@ public enum Couleur
 			case "VERT" 	: res = "cardamone";break;
 			case "NOIR" 	: res = "poivre";   break;
 		}
-		return res+".png";
+		return res + ".png";
 	}
 
 	public static int getNbCouleur()
@@ -66,5 +66,4 @@ public enum Couleur
 	{
 		return Couleur.valueOf(ordinal);
 	}
-
 }
