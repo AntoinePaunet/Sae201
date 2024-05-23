@@ -25,9 +25,7 @@ public class Controleur
         System.out.println("\nAjout des ressources à partir des jetons de la pioche\n");
 
         for(int i = 0 ; i < 15 ; i++)
-        {
-            System.out.print( this.plateau.ajouterRessource(this.plateau.getPioche().tirerJeton()) + "\n" );
-        }
+        	System.out.print( this.plateau.ajouterRessource(this.plateau.getPioche().tirerJeton()) + "\n" );
 
         System.out.print("\n");
 
