@@ -23,25 +23,22 @@ public class Interface extends JFrame
 
         this.setIconImage(new ImageIcon(getClass().getResource("/images/paprika.png")).getImage());
 
-        this.imgBG();
-        this.add(this.panel);
 
-        this.setVisible( true );
-        this.setFocusable(true);
-        this.requestFocusInWindow();
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    }
-
-
-
-    public void imgBG()
-    {
         //Mise en place du fond d'écran
 
         ImageIcon backgroundImage = new ImageIcon(getClass().getResource("/images/plateau.png"));
         JLabel backgroundLabel = new JLabel(backgroundImage);
         backgroundLabel.setBounds(0, 0, backgroundImage.getIconWidth(), backgroundImage.getIconHeight());
         this.panel.add(backgroundLabel, JLayeredPane.DEFAULT_LAYER);
+
+
+
+        this.add(this.panel);
+
+        this.setVisible( true );
+        this.setFocusable(true);
+        this.requestFocusInWindow();
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
 
@@ -52,7 +49,5 @@ public class Interface extends JFrame
         imgLabel.setBounds(x, y, image.getIconWidth(), image.getIconHeight());
         this.panel.add(imgLabel, JLayeredPane.DRAG_LAYER);
     }
-
-
 
 }
