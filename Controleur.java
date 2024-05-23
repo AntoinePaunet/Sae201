@@ -13,7 +13,7 @@ public class Controleur
 
     public Controleur()
     {
-        this.ihm = new Interface();
+        this.ihm     = new Interface();
         this.plateau = new Plateau();
 
 
@@ -65,7 +65,7 @@ public class Controleur
         {
             if(this.plateau.getTabPieces()[i] != null)
             {
-                this.ihm.ajoutElements(x,y, "bronze.png");
+                this.ihm.ajoutElements(x,y, "bronze.png"); //Démo donc seulement pièces de bronze
                 x += 85;
             }
         }
@@ -74,7 +74,7 @@ public class Controleur
 
 
 
-    public static void main( String[] args )
+    public static void main( String[] args )//Lancement de l'application
     {
         new Controleur();
     }
