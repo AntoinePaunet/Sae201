@@ -8,8 +8,8 @@
 
 public class Controleur
 {
-    private Interface ihm;
-    private Plateau plateau;
+    private Interface   ihm;
+    private Plateau     plateau;
 
     public Controleur()
     {
