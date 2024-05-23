@@ -24,7 +24,9 @@ public enum Couleur
 	/**
 	 * Crée un objet de la classe Couleur avec les paramètres r v b
 	 *
-	 * @return un nouvel objet de la classe Couleur.
+	 * @param r la part de rouge dans la Couleur.
+	 * @param v la part de vert  dans la Couleur.
+	 * @param b la part de bleu  dans la Couleur.
 	 */
 	private Couleur( int r , int v , int b )
 	{
