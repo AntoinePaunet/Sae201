@@ -16,16 +16,34 @@ public enum Piece implements IRessource
 
 	private int valeur;
 
+
+	/**
+	 * Constructeur pour créer un objet de type pièce
+	 * @param valeur de la pièce
+	 */
+
 	private Piece( int valeur )
 	{
 		this.valeur = valeur;
 	}
 
+
+	/**
+	 * Retourne la valeur d'une pièce
+	 *
+	 * @return valeur de la pièce
+	 */
 	public int getvaleur()
 	{
 		return this.valeur;
 	}
 
+
+	/**
+	 * Donne sous forme de string Piece et le nom de la pièce
+	 *
+	 * @return String Piece + nom de la pièce
+	 */
 	public String toString()
 	{
 		return "Piece " + this.name();

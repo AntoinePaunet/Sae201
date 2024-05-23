@@ -11,6 +11,10 @@ public class Controleur
     private Interface   ihm;
     private Plateau     plateau;
 
+
+    /**
+     * Constructeur de la classe controleur qui va executer le programme
+     */
     public Controleur()
     {
         this.ihm     = new Interface();
@@ -42,6 +46,10 @@ public class Controleur
     }
 
 
+    /**
+     * Méthode qui permet de générer les élements dans l'interface graphique en donnant les coordonnées et les
+     * types de Jetons à placer dans le plateau graphique
+     */
     private void toInterface()
     {
         int x = 80;
@@ -75,7 +83,10 @@ public class Controleur
 
 
 
-
+    /**
+     * Méthode permettant l'éxecution du programme en créant un nouveau Controleur
+     * @param String[] args
+     */
     public static void main( String[] args )//Lancement de l'application
     {
         new Controleur();

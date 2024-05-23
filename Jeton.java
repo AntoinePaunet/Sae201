@@ -12,13 +12,30 @@ public class Jeton
 {
 	private IRessource type ;
 
+
+	/**
+	 * Constructeur pour créer un Jeton
+	 * @param type IRessource
+	 */
 	public Jeton( IRessource type )
 	{
 		this.type = type;
 	}
 
+
+	/**
+	 * Retourne le type du Jeton ( Epice ou Piece )
+	 *
+	 * @return IRessource type de jeton
+	 */
 	public IRessource getType() { return this.type; }
 
+
+	/**
+	 * Permet de donner sous Forme de String les infos sur le Jeton
+	 *
+	 * @return String avec le toString dy type ( Piece ou Epice )
+	 */
 	public String toString() 
 	{
 		return this.type.toString();

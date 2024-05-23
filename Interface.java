@@ -14,6 +14,11 @@ public class Interface extends JFrame
 {
     private JLayeredPane panel;
 
+
+    /**
+     * Constructeur de la classe interface permettant de générer une IHM de 900px / 535px
+     * Contient tout les éléments graphiques
+     */
     public Interface()
     {
         this.setTitle( "La route des epices" );
@@ -42,6 +47,12 @@ public class Interface extends JFrame
     }
 
 
+    /**
+     * Permet d'ajouter des éléments dans l'interface graphique
+     * @param x Coordonnée de l'abscisse de l'image à placer
+     * @param y Coordonnée de l'ordonnée de l'image à placer
+     * @param url lien de l'image dans le dossier image.
+     */
     public void ajoutElements(int x, int y, String url)
     {
         ImageIcon image = new ImageIcon(getClass().getResource("/images/" + url));
