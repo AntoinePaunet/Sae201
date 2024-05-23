@@ -42,8 +42,8 @@ public class Controleur
 
     private void toInterface()
     {
-        int x = 80;
-        int y = 20;
+        int x = 80 , y = 20;
+
         for(int i = 0; i < this.plateau.getTabEpices().length ; i++) //Affichage des épices
         {
             for(int j = 0 ; j < this.plateau.getTabEpices()[i].length ; j++)
