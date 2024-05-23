@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.Arrays;
 
 import inter.IRessource;
@@ -76,7 +75,8 @@ public class Plateau implements IRessource
 							}
 						}
 
-					}else if(this.tabEpices[2][i] == null && !bOk) //Si la ressource n'est pas la même
+					}
+					else if(this.tabEpices[2][i] == null && !bOk) //Si la ressource n'est pas la même
 					{
 						this.tabEpices[2][i] = (Epice) r.getType();
 						bOk = true;
@@ -84,7 +84,8 @@ public class Plateau implements IRessource
 				}
 			}
 
-		} else if ( r.getType() instanceof Piece)
+		}
+		else if ( r.getType() instanceof Piece)
 		{
 			int cpt = ((Piece) r.getType()).getvaleur();
 			int nbSlotsLibre = 0;
@@ -96,20 +97,19 @@ public class Plateau implements IRessource
 					nbSlotsLibre++;
 			}
 
-			if(nbSlotsLibre < cpt) //Si le nombre de slots de pièce est plus petit que la valeur de la pièce on annule
-				return false;
-
-
-			for(int i = 0 ; i < this.tabPieces.length ; i++)
+			if(nbSlotsLibre >= cpt) //Si il y a assez de slots de libre par rapport au prix de la pièce
 			{
-				if (cpt == 0)
-					return true;
-
-				if (this.tabPieces[i] == null)
+				for(int i = 0 ; i < this.tabPieces.length ; i++)
 				{
-					this.tabPieces[i] = Piece.BRONZE;
-					this.nbPiece++;
-					cpt--;
+					if (cpt == 0)
+						bOk = true;
+
+					if (this.tabPieces[i] == null && !bOk)
+					{
+						this.tabPieces[i] = Piece.BRONZE;
+						this.nbPiece++;
+						cpt--;
+					}
 				}
 			}
 		}
